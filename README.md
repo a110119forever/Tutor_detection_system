@@ -28,20 +28,6 @@
 * 一旦识别到目标人，Worker 按冷却时间向 `event_q` 投递事件（声音/通知/日志/FPS）
 * Flask 通过 **/events** 将事件以 **SSE** 实时推给前端；前端播放声音、弹通知、更新表格与统计
 
-```mermaid
-flowchart LR
-    Cam[Camera] -->|Frames| Worker
-    Worker -->|Processed Frames| RQ[(result_q)]
-    Worker -->|Events| EQ[(event_q)]
-    RQ --> Flask
-    EQ --> Flask
-    Flask -->|/video_feed (MJPEG)| Browser
-    Flask -->|/events (SSE)| Browser
-    Browser -->|Play| Audio[(<audio>/sound/man.wav)]
-    Browser -->|Notify/Log/FPS| UI[Dashboard UI]
-    Worker -->|CSV append| CSV[(recognition_log.csv)]
-```
-
 ---
 
 ## 📁 目录结构
