@@ -61,7 +61,7 @@ pip install opencv-contrib-python onnxruntime-openvino insightface flask numba n
 
 ### 2) 放好资源
 
-* 把 **已知人脸** 图片放到 `image/face_data/`（文件名即识别名，如 `junliang.jpg` → “junliang”）
+* 把 **已知人脸** 图片放到 `image/face_data/`（文件名即识别名，如 `xi.jpg` → “xi”）
 * 把 **声音文件** 放到 `sound/man.wav`（前端 `<audio src="/sound/man.wav">` 会来这里取）
 
 ### 3) 运行
@@ -79,8 +79,8 @@ python app.py
 ```python
 COS_THRESHOLD   = 0.4      # 相似度阈值（高：保守易漏；低：敏感易误）
 DETECT_INTERVAL = 8        # 跳帧检测间隔（大：省算力但漂移风险升；小：更稳但耗算力）
-POPUP_TARGET    = "junliang"   # 弹窗目标（与 face_data 文件名一致、无后缀）
-SOUND_TARGET    = "junliang"   # 声音目标（同上）
+POPUP_TARGET    = "xi"   # 弹窗目标（与 face_data 文件名一致、无后缀）
+SOUND_TARGET    = "xi"   # 声音目标（同上）
 POPUP_COOLDOWN  = 30       # 通知冷却（秒）
 SOUND_COOLDOWN  = 30       # 声音冷却（秒）
 RECORD_INTERVAL = 600      # 同一人识别日志最短间隔（秒）
