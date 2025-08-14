@@ -77,13 +77,14 @@ python app.py
 ## ⚙️ 关键配置（app.py 顶部）
 
 ```python
+KNOWN_FACES_DIR = "image/face_data"  # 已知人脸库目录（文件名=身份名，不含扩展名）
 COS_THRESHOLD   = 0.4      # 相似度阈值（高：保守易漏；低：敏感易误）
 DETECT_INTERVAL = 8        # 跳帧检测间隔（大：省算力但漂移风险升；小：更稳但耗算力）
 POPUP_TARGET    = "xi"   # 弹窗目标（与 face_data 文件名一致、无后缀）
 SOUND_TARGET    = "xi"   # 声音目标（同上）
 POPUP_COOLDOWN  = 30       # 通知冷却（秒）
 SOUND_COOLDOWN  = 30       # 声音冷却（秒）
+DETECT_INTERVAL = 8      # 跳帧检测间隔：每隔 N 帧再做一次检测，其余帧用追踪器跟踪
 RECORD_INTERVAL = 600      # 同一人识别日志最短间隔（秒）
+LOG_CSV_PATH = "recognition_log.csv"  # 识别日志 CSV 文件路径
 ```
-
-> **命名规则**：`KNOWN_FACES_DIR` 内图片的\*\*文件名（不带扩展名）\*\*就是识别名。需与 `SOUND_TARGET/POPUP_TARGET` 完全一致（区分大小写）。
