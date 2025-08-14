@@ -74,7 +74,7 @@ python app.py
 
 ---
 
-## ⚙️ 关键配置（app.py 顶部）
+## ⚙️ 关键配置（后端代码顶部）
 
 ```python
 KNOWN_FACES_DIR = "image/face_data"  # 已知人脸库目录（文件名=身份名，不含扩展名）
